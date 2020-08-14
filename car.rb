@@ -1,20 +1,40 @@
-class Car
+class NewCar
     
-    def initialize(model, color)
-        @model = model
-        @color = color
+    def initialize(brand, year)
+        @brand = brand
+        @year = year
     end
 
-    def get_model
-        @model
+    def get_brand
+        @brand
     end
     
-    def set_model(model)
-        @model = model
+    def set_brand(brand)
+        @brand = brand
     end
 end
 
-my_car = Car.new('toyota', 'red')
+class OldCar
+    
+    def initialize(brand, year)
+        @brand = brand
+        @year = year
+    end
 
-puts my_car.get_model
+    def get_brand
+        @brand
+    end
+    
+    def set_brand(brand)
+        @brand = brand
+    end
+end
 
+class SpecificCar < NewCar; end
+
+tsikot = NewCar.new("toyota", 2020)
+puts tsikot.get_brand
+kotse = OldCar.new("delorean", 1985) 
+puts kotse.get_brand
+auto_ko_to = SpecificCar.new("sarao", 1990)
+puts auto_ko_to.get_brand
